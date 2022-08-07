@@ -44,14 +44,14 @@ action:
     command: '{{ trigger.to_state.state }}'
 - choose:
   - conditions:
-    - '{{ command == ''on-press'' }}'
+    - '{{ command == ''1_single'' }}'
     sequence: !input button_1
   - conditions:
-    - '{{ command == ''up-press'' }}'
+    - '{{ command == ''2_single'' }}'
     sequence: !input button_2
   - conditions:
-    - '{{ command == ''down-press'' }}'
+    - '{{ command == ''3_single'' }}'
     sequence: !input button_3
   - conditions:
-    - '{{ command == ''off-press'' }}'
+    - '{{ command == ''4_single'' }}'
     sequence: !input button_4
