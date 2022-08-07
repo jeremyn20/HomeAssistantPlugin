@@ -9,27 +9,57 @@ blueprint:
       selector:
         entity:
           domain: sensor
-    button_1:
+    button_1s:
       name: Button Single Dot
       description: Action to run on click of single dot button
       default: []
       selector:
         action: null
-    button_2:
+    button_2s:
       name: Button Two Dots
       description: Action to run on click of two dot button
       default: []
       selector:
         action: null
-    button_3:
+    button_3s:
       name: Button Three Dots
       description: Action to run on click of three dot button
       default: []
       selector:
         action: null
-    button_4:
+    button_4s:
       name: Button Four Dots
       description: Action to run on click of four dot button
+      default: []
+      selector:
+        action: null
+    button_1d:
+      name: Button double Single Dot
+      description: Action to run double click of single dot button
+      default: []
+      selector:
+        action: null
+    button_2d:
+      name: Button double Two Dots
+      description: Action to run double click of two dot button
+      default: []
+      selector:
+        action: null
+    button_3d:
+      name: Button double Three Dots
+      description: Action to run double click of three dot button
+      default: []
+      selector:
+        action: null
+    button_4d:
+      name: Button double Four Dots
+      description: Action to run double click of four dot button
+      default: []
+      selector:
+        action: null
+    button_1h:
+      name: Button Hold Single Dots
+      description: Action to run hold click of four dot button
       default: []
       selector:
         action: null
@@ -45,13 +75,28 @@ action:
 - choose:
   - conditions:
     - '{{ command == ''1_single'' }}'
-    sequence: !input button_1
+    sequence: !input button_1s
   - conditions:
     - '{{ command == ''2_single'' }}'
-    sequence: !input button_2
+    sequence: !input button_2s
   - conditions:
     - '{{ command == ''3_single'' }}'
-    sequence: !input button_3
+    sequence: !input button_3s
   - conditions:
     - '{{ command == ''4_single'' }}'
-    sequence: !input button_4
+    sequence: !input button_4s
+  - conditions:
+    - '{{ command == ''1_double'' }}'
+    sequence: !input button_1d
+  - conditions:
+    - '{{ command == ''2_double'' }}'
+    sequence: !input button_2d
+  - conditions:
+    - '{{ command == ''3_double'' }}'
+    sequence: !input button_3d
+  - conditions:
+    - '{{ command == ''4_double'' }}'
+    sequence: !input button_4d
+  - conditions:
+    - '{{ command == ''1_hold'' }}'
+    sequence: !input button_1h
